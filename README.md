@@ -6,7 +6,7 @@ Client-side caching for the mobile app masses.
 
 easy-app-cache is a super-simple caching library designed for use in HTML5
 mobile apps (read: with PhoneGap). EAC is designed with a focus on robustness
-and verbosity - where applicable errors are checked for and extra logging can
+and verbosity - where applicable, errors are checked for and extra logging can
 be turned on to show these errors. The source code is also generously
 commented.
 
@@ -30,13 +30,13 @@ app. For example, a user might leave your app to take a phone call or use
 some other app (however your page is still present in memory). When they
 return, session-cached items are still present. Session storage is implemented
 using PhoneGap specific features and requires a PhoneGap environment to work.
-Without PhoneGap, session storage becomes identical to...
+Without PhoneGap, session storage degrades gracefully to become...
  * "Memory Storage" is caching that exists only until the user leaves your
 page. As soon as they browse away from the current page, Memory storage is
 destroyed. It lives in the JS engine memory and is implemented using a simple
 dictionary.
 
-To cache an object, simply call `appCache.set[P|S|M]()` where you use P for
+To cache an object, simply call `appCache.set[P|S|M]()`, where you use P for
 Persistant storage, S for Session storage and M for Memory storage.
 
 To later retrieve that object, call `appCache.get[P|S|M]()`.
@@ -47,8 +47,8 @@ Objects can also be cleared using `appCache.clear[P|S|M]()`.
 // Store a persistant object
 appCache.setP("persistant-string", "Yo Dawg! This string is totally persistant");
 
-// Store session-life object
-appCache.setS("userdetails", {
+// Store a session-life object
+appCache.setS("user_details", {
     name: "Aaron",
     likes_chocolate: false
 });
@@ -57,7 +57,7 @@ appCache.setS("userdetails", {
 console.log(appCache.getP("persistant-string"));
 // => Prints "Yo Dawg! This string is totally persistant"
 
-var chocolate_affinity = appCache.getS("userdetails").likes_chocolate;
+var chocolate_affinity = appCache.getS("user_details").likes_chocolate;
 
 /* You can pass an optional second 'default' parameter. If the requested
  * object doesn't exist, it will be stored, and that value will be returned.
@@ -78,7 +78,6 @@ appCache.clearP();
 appCache.bust();
 
 // Everything is gone now
-
 ```
 
 ## Other options
