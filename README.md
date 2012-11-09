@@ -88,3 +88,5 @@ EAC also allows you to turn logging off (default) or on.
 appCache.setVerbose(true);
 ```
 
+Happy Coding!
+
