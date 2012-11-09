@@ -88,5 +88,10 @@ EAC also allows you to turn logging off (default) or on.
 appCache.setVerbose(true);
 ```
 
+## License
+
+EAC is released under the MIT license - you're good to use it wherever,
+I'd love to know about it though ;)
+
 Happy Coding!
 
